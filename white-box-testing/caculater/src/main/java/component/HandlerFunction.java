@@ -20,6 +20,7 @@ public class HandlerFunction implements FunctionHanlder {
         }
         return val;
     }
+
     @Override
     public double term(Token_Stream ts,Error error) {
         double val=single(ts,error);
@@ -59,6 +60,7 @@ public class HandlerFunction implements FunctionHanlder {
             }
         }
     }
+
     @Override
     public  double expression(Token_Stream ts,Error error) {
         double val=term(ts,error);
@@ -108,6 +110,7 @@ public class HandlerFunction implements FunctionHanlder {
         }
         return val;
     }
+
     @Override
     public int fac(int val)
     {

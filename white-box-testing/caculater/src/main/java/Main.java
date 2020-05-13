@@ -4,8 +4,6 @@ import component.HandlerFunction;
 import component.Token_Stream;
 
 public class Main {
-
-
     public static void main(String[] args) {
         HandlerFunction handlerFunction = new HandlerFunction();
         String expression = "1+2*3-2/5;";
