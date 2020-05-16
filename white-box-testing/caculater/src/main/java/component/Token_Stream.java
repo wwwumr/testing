@@ -12,7 +12,7 @@ public class Token_Stream {
   private int length;
   private int currentIndex;
 
-  private double number() {
+  public double number() {
     String tempNumber = "";
     for (int i = currentIndex; i < length; i++) {
       if (NUMBER_COMPONENT.contains(expression[i])) {
@@ -22,14 +22,14 @@ public class Token_Stream {
         break;
       }
     }
+    double number = 0;
     try {
-      double number = Double.parseDouble(tempNumber);
-      return number;
+      number = Double.parseDouble(tempNumber);
     } catch (Exception e) {
       System.out.println(e.getMessage());
       System.exit(-1);
     }
-    return 0;
+    return number;
   }
 
   public Token_Stream(String expression) {
