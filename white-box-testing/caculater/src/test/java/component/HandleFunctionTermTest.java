@@ -1,4 +1,4 @@
-package component.path;
+package component;
 
 import component.Error;
 import component.HandlerFunction;
@@ -11,7 +11,7 @@ public class HandleFunctionTermTest {
     HandlerFunction handlerFunction = new HandlerFunction();
 
     @Test
-    public void testTerm001() {
+    public void test001() {
         String expression = "3;";
         Token_Stream ts = new Token_Stream(expression);
         Error error = new Error();
@@ -20,7 +20,7 @@ public class HandleFunctionTermTest {
     }
 
     @Test
-    public void testTerm002() {
+    public void test002() {
         String expression = "3*3;";
         Token_Stream ts = new Token_Stream(expression);
         Error error = new Error();
@@ -29,7 +29,7 @@ public class HandleFunctionTermTest {
     }
 
     @Test
-    public void testTerm003() {
+    public void test003() {
         String expression = "3/2;";
         Token_Stream ts = new Token_Stream(expression);
         Error error = new Error();
@@ -38,7 +38,7 @@ public class HandleFunctionTermTest {
     }
 
     @Test
-    public void testTerm004() {
+    public void test004() {
         String expression = "3/0;";
         Token_Stream ts = new Token_Stream(expression);
         Error error = new Error();
@@ -47,7 +47,7 @@ public class HandleFunctionTermTest {
     }
 
     @Test
-    public void testTerm005() {
+    public void test005() {
             String expression = "3%2.3;";
         Token_Stream ts = new Token_Stream(expression);
         Error error = new Error();
@@ -56,7 +56,7 @@ public class HandleFunctionTermTest {
     }
 
     @Test
-    public void testTerm006() {
+    public void test006() {
         String expression = "3%0;";
         Token_Stream ts = new Token_Stream(expression);
         Error error = new Error();
@@ -64,11 +64,20 @@ public class HandleFunctionTermTest {
         Assert.assertEquals(error.getError(),3);
     }
     @Test
-    public void testTerm007() {
+    public void test007() {
         String expression = "3%2;";
         Token_Stream ts = new Token_Stream(expression);
         Error error = new Error();
         double var = handlerFunction.term(ts, error);
         Assert.assertEquals(var,1,0.0001);
+    }
+
+    @Test
+    public void test008() {
+        String expression = "1*1/1%1;";
+        Token_Stream ts = new Token_Stream(expression);
+        Error error = new Error();
+        double var = handlerFunction.term(ts, error);
+        Assert.assertEquals(var,0,0.0001);
     }
 }

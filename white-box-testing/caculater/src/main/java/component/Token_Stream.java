@@ -27,7 +27,7 @@ public class Token_Stream {
       number = Double.parseDouble(tempNumber);
     } catch (Exception e) {
       System.out.println(e.getMessage());
-      System.exit(-1);
+      return 0;
     }
     return number;
   }

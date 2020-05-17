@@ -1,4 +1,4 @@
-package component.path;
+package component;
 
 import component.Token;
 import component.Token_Stream;

@@ -1,4 +1,4 @@
-package component.path;
+package component;
 
 import component.Token_Stream;
 import org.junit.Assert;
@@ -12,6 +12,7 @@ public class HandleTokenStreamNumberTest {
         Double number = ts.number();
         Assert.assertEquals(number,0,0.001);
     }
+
     @Test
     public void test002() {
         String expression = "1.2";
