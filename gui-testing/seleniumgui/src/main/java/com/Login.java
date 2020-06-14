@@ -19,11 +19,11 @@ public class Login {
     // 打开浏览器
     chrome_driver.get(url);
 
-    // 显示登录前cookies
-    Set<Cookie> cookies = chrome_driver.manage().getCookies();
-    System.out.println("cookies before login: " + cookies);
-
     try {
+      sleep(5000);
+      // 显示登录前cookies
+      Set<Cookie> cookies = chrome_driver.manage().getCookies();
+      System.out.println("cookies before login: " + cookies);
       // 输入手机号
       WebElement element = chrome_driver.findElement(By.name("phone"));
       element.sendKeys("15159004816");
